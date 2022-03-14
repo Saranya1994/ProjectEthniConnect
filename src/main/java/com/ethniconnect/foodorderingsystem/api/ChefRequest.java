@@ -1,0 +1,13 @@
+package com.ethniconnect.foodorderingsystem.api;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ChefRequest {
+    private int zipCode;
+    private int cuisineId;
+}
