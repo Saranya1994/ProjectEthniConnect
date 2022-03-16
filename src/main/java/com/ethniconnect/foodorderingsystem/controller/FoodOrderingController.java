@@ -1,6 +1,7 @@
 package com.ethniconnect.foodorderingsystem.controller;
 
 import com.ethniconnect.foodorderingsystem.api.*;
+import com.ethniconnect.foodorderingsystem.service.FoodOrderingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +14,14 @@ import java.util.List;
 public class FoodOrderingController {
    @Autowired
    Response response;
+   @Autowired
+    FoodOrderingService foodOrderingService;
    @GetMapping("/getCuisines/{zipCode}")
    public Response getCuisines(@PathVariable int zipCode) {
-     response.setCuisines(Arrays.asList(new Cuisines(1, "Italian"),
+     /*response.setCuisines(Arrays.asList(new Cuisines(1, "Italian"),
              new Cuisines(2, "Mexican")));
-     response.setZipCode(zipCode);
+     response.setZipCode(zipCode);*/
+       foodOrderingService.getCuisines(zipCode);
       return response;
    }
     @PostMapping("/getChefs")
@@ -28,12 +32,10 @@ public class FoodOrderingController {
                                  "MI"))));
         return response;
     }
-  /*@PostMapping("/getMenu")
+  @PostMapping("/getMenu")
     public Response getMenuByChefId(@RequestBody MenuRequest menuRequest) {
-        response.setMenu(Arrays.asList(new Menu("Monday","Breakfast",
-                        (List<Dish>) new Dish("Cheese Omlette", 5.99)),
-        new Menu ("Monday","Breakfast", (List<Dish>) new Dish("Spring Roll", 5.99)),
-        new Menu ("Monday","Dinner", (List<Dish>) new Dish("Shrimp Soup",4.99))));
+        response.setMenu(Arrays.asList(new Menu("Monday","Breakfast",Arrays.asList(new Dish("Cheese Omlette",5.99),
+                new Dish("Tortillas",3.99)))));
         return response;
-    }*/
+    }
 }
