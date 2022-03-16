@@ -1,5 +1,6 @@
 package com.ethniconnect.foodorderingsystem.api;
 
+import com.ethniconnect.foodorderingsystem.entity.Cuisines;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
