@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 @Service
-public class FoodOrderingService implements CuisineRepository {
+public class FoodOrderingService {
     public Response getCuisines(int zipCode) {
-
-
     }
-
 
     public Response getChefsByCuisineId(ChefRequest chefRequest) {
     }
