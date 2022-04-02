@@ -1,12 +1,14 @@
 package com.ethniconnect.foodorderingsystem.repository;
 
 import com.ethniconnect.foodorderingsystem.entity.Cuisines;
+import com.ethniconnect.foodorderingsystem.entity.ZipMaster;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Set;
 
-public interface CuisineRepository extends JpaRepository<Cuisines,Long> {
+public interface ZipRepository extends JpaRepository<ZipMaster,Long> {
 
-    public Set<Cuisines> getCuisinesByZipMaster_ZipCode(String zipCode);
+    public ZipMaster getZipMasterByZipCode(String zipCode);
+
 
 }

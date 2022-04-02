@@ -9,7 +9,7 @@ import org.apache.tomcat.jni.Address;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Chefs {
-    private int chefId;
+    private long chefId;
     private String chefName;
     private String phoneNumber;
     private String experience;
